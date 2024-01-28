@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Medidas</title>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <input type="button" value="Converter" onclick="converter()">
+    <p>Clique no botão acima para iniciar.</p>
+    <p></p>
+    <div id="res"></div>
+
+    <script>
+        function converter() {
+            var dis = Number(window.prompt('Digite uma distância em metros(m).'))
+            var km = dis/1000
+            var hec = dis/100
+            var dam = dis/10
+            var dm = dis*10
+            var cm = dis*100
+            var mm = dis*1000
+            res.innerHTML=`<strong>A distância de ${dis} metros, corresponde a ...</strong><br><p></p> ${km} quilômetros (Km)<br> ${hec} hectômetros (Hm)<br> ${dam} decâmetros (Dam)<br> ${dm} decímetros (dm)<br> ${cm} centímetros (cm)<br> ${mm} milímetros (mm)`
+        }
+    </script>
+</body>
+</html>

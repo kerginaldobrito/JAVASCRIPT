@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio-antes-depois</title>
+</head>
+<body>
+    <h1>Antes e depois</h1>
+    <input type="button" value="Antecessor e Sucessor" onclick="clicar()">
+    <p></p>
+    <div id="res"></div>
+
+    <script>
+        function clicar()
+        {
+        var num =Number(window.prompt('Digite um número inteiro qualquer?`'))
+        var suc = num + 1
+        var ant = num - 1
+        res.innerHTML = `Antes de <strong>${num}</strong>, temos o número ${ant}. <br> Depois de <strong>${num}</strong>, temos o número ${suc}.`
+        }
+    </script>
+</body>
+</html>

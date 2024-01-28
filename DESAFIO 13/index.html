@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+    <style>
+        body {
+             font-family: Arial, Helvetica, sans-serif;
+             background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do Aluno</h1>
+    <input type="button" value="Entrar com as notas" onclick="entrar()"><br>
+    <p>clique no botão acima para informar as notas do aluno.</p>
+    <hr>
+    <div id="res"></div>
+
+    <script>
+        function entrar() {
+        var aluno = (window.prompt(`Qual o nome do aluno?`))
+        var nota1 = Number(window.prompt(`Primeira nota de ${aluno}`))
+        var nota2 = Number(window.prompt(`Segunda nota de ${aluno}`))
+        var media = (nota1 + nota2)/2
+
+        if (media < 3.0) {
+            res.innerHTML=`<strong>Analisando a situação de ${aluno}</strong><br><p> Com as notas ${nota1} e ${nota2}, a <strong>média é ${media.toFixed(2)}</strong><br><p> <u>Com média menor que 3,0</u>, o aluno está <mark style="background-color:red">REPROVADO.</mark>`
+        } else {
+            if (media > 6.0) {
+                res.innerHTML=`<strong>Analisando a situação de ${aluno}</strong><br><p> Com as notas ${nota1} e ${nota2}, <strong>a média é ${media.toFixed(2)}.</strong><br><p> <u>Com média acima de 6,0</u>, o aluno está <mark style="background-color: yellowgreen">APROVADO</mark>`
+            } else {
+                res.innerHTML=`<strong>Analisando a situação de ${aluno}</strong><br><p> Com as notas ${nota1} e ${nota2}, <strong>a média é ${media.toFixed(2)}.</strong><br><p> <u>Com média entre 3,0 e 6,0</u>, o aluno está em <mark style="background-color: lightyellow">RECUPERAÇÃO.</mark>`
+            }
+        }
+        }
+    </script>
+    
+</body>
+</html>

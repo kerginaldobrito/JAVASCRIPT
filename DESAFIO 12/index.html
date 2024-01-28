@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <p>Clique no botão acima para analisar a mudança do preço.</p><br>
+    <div id="res"></div>
+
+    <script>
+        function verificar() {
+            
+            var preco_ant=Number(window.prompt(`Qual era o preço anterior do produto?`))
+            var preco_atual=Number(window.prompt(`Qual é o preço atual do produto?`))
+            var dif1=preco_atual - preco_ant
+            var porc1= (dif1/preco_ant)*100
+            var dif2=preco_ant - preco_atual
+            var porc2= (dif2/preco_ant)*100
+
+            if (preco_atual < preco_ant) {
+                res.innerHTML=`<strong>Analisando os valores informados</strong><br><p> O produto custava R$ ${preco_ant.toFixed(2)} e agora custa R$ ${preco_atual.toFixed(2)}.<br> Hoje o produto está mais barato.<br> O preço caiu ${dif2.toFixed(2)} em relação ao preço anterior.<br> Uma variação de ${porc2.toFixed(2)}% para baixo.`
+                } else {
+                    if (preco_atual > preco_ant) {
+                        res.innerHTML=`<strong>Analisando os valores informados</strong><br><p> O produto custava R$ ${preco_ant.toFixed(2)} e agora custa R$ ${preco_atual.toFixed(2)}.<br> Hoje o produto está mais caro.<br> O preço subiu R$ ${dif1.toFixed(2)} em relação ao preço anterior.<br> Uma variação de ${porc1.toFixed(2)}% para cima.`    
+                    } else {
+                        res.innerHTML=`<strong>Analisando os valores informados</strong><br><p> O produto custava R$ ${preco_ant.toFixed(2)} e agora também custa R$ ${preco_atual.toFixed(2)}.<br> Hoje o produto está com o mesmo preço.<br> Não houve variação.` 
+                    }
+                }
+        }
+    </script>
+</body>
+</html>
+
+    

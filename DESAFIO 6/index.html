@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt=br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Temperaturas</title>
+    <style>
+        h1 {
+            font-family:Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Temperaturas</h1>
+    <input type="button" value="Converter" onclick="converter()">
+    <p>Clique no botão acima para iniciar.</p>
+    <div id="res"></div>
+
+    <script>
+        var cel =Number(window.prompt(`Digite a temperatura em ºC (Celsius)`))
+        var kel = cel + 273
+        var fah = cel*1.8 +32
+        res.innerHTML =`<b>A temperatura de ${cel}º Celsius, corresponde a ...</b><p><br> <b>${kel}</b> (Kelvin)<br> <p> <b>${fah}</b> (Fahrenheit)`
+    </script>
+</body>
+</html>

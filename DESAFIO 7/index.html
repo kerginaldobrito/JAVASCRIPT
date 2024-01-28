@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor monetário</title>
+</head>
+<body>
+    
+    <script>
+        function converter() {
+        var dol=Number(window.prompt(`Antes de mais nada. Quanto está a cotação do dolar americano agora?`))
+        var reais=Number(window.prompt(`Quantos R$ você tem na carteira?`))
+        var tot = reais/dol
+        res.innerHTML=`<b>R$ ${reais.toFixed(2)} reais</b> equivalem a <b> US$ ${tot.toFixed(2)} dólares americanos.</b>`
+    }
+    </script>
+
+    <h1>Conversor R$ → US$</h1>
+    <input type="button" value="Converter" onclick="converter()"><br>
+    <p>Clique no botão acima para iniciar</p>
+    <div id="res"></div><br>
+ 
+</body>
+</html>
